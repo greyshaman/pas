@@ -1,38 +1,36 @@
-use super::human_named::HumanNamed;
+use super::human_named::{HumanNamed, HumanName};
 
 pub struct User {
-  first_name: String,
-  middle_name: String,
-  last_name: String,
+  human_name: HumanName,
   user_name: String,
   encrypted_password: String,
 }
 
 impl HumanNamed for User {
   fn first_name(&self) -> String {
-    User::to_capitalize(&self.first_name)
+    self.human_name.first_name()
   }
 
   fn set_first_name(&mut self, value: &str) -> &User {
-    self.first_name = String::from(value);
+    self.human_name.set_first_name(value);
     self
   }
   
   fn middle_name(&self) -> String {
-    User::to_capitalize(&self.middle_name)
+    self.human_name.middle_name()
   }
 
   fn set_middle_name(&mut self, value: &str) -> &User {
-    self.middle_name = String::from(value);
+    self.human_name.set_middle_name(value);
     self
   }
 
   fn last_name(&self) -> String {
-    User::to_capitalize(&self.last_name)
+    self.human_name.last_name()
   }
 
   fn set_last_name(&mut self, value: &str) -> &User {
-    self.last_name = String::from(value);
+    self.human_name.set_last_name(value);
     self
   }
 }
@@ -40,9 +38,7 @@ impl HumanNamed for User {
 impl User {
   pub fn new() -> User {
     User {
-      first_name: String::new(),
-      middle_name: String::new(),
-      last_name: String::new(),
+      human_name: HumanName::new(),
       user_name: String::new(),
       encrypted_password: String::new(),
     }

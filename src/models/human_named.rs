@@ -47,3 +47,48 @@ pub trait HumanNamed {
     }
   }
 }
+
+pub(super) struct HumanName {
+  first_name: String,
+  middle_name: String,
+  last_name: String,
+}
+
+impl HumanName {
+  pub(super) fn new() -> HumanName {
+    HumanName {
+      first_name: String::new(),
+      middle_name: String::new(),
+      last_name: String::new(),
+    }
+  }
+}
+
+impl HumanNamed for HumanName {
+  fn first_name(&self) -> String {
+    HumanName::to_capitalize(&self.first_name)
+  }
+
+  fn set_first_name(&mut self, value: &str) -> &HumanName {
+    self.first_name = String::from(value);
+    self
+  }
+  
+  fn middle_name(&self) -> String {
+    HumanName::to_capitalize(&self.middle_name)
+  }
+
+  fn set_middle_name(&mut self, value: &str) -> &HumanName {
+    self.middle_name = String::from(value);
+    self
+  }
+
+  fn last_name(&self) -> String {
+    HumanName::to_capitalize(&self.last_name)
+  }
+
+  fn set_last_name(&mut self, value: &str) -> &HumanName {
+    self.last_name = String::from(value);
+    self
+  }
+}
