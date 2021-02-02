@@ -1,5 +1,5 @@
 use super::human_named::{HumanNamed, HumanName};
-
+#[allow(dead_code)]
 pub struct User {
   human_name: HumanName,
   user_name: String,
@@ -35,6 +35,7 @@ impl HumanNamed for User {
   }
 }
 
+#[allow(dead_code)]
 impl User {
   pub fn new() -> User {
     User {
