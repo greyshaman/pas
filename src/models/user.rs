@@ -47,6 +47,24 @@ impl User {
       encrypted_password: String::new(),
     }
   }
+
+  pub fn user_name(&self) -> String {
+    String::from(&self.user_name)
+  }
+
+  pub fn set_user_name(&mut self, value: &str) -> &User {
+    self.user_name = String::from(value);
+    self
+  }
+
+  pub fn encrypted_password(&self) -> String {
+    String::from(&self.encrypted_password)
+  }
+
+  pub fn set_encrypted_password(&mut self, value: & str) -> &User {
+    self.encrypted_password = String::from(value);
+    self
+  }
 }
 
 
@@ -103,5 +121,29 @@ mod tests {
   #[test]
   fn last_name_should_be_capitalized() {
     assert_eq!("Решетников", User::new().set_last_name("решетников").last_name());
+  }
+
+  #[test]
+  fn new_user_instance_should_have_empty_user_name() {
+    let user = User::new();
+
+    assert_eq!("", user.user_name());
+  }
+
+  #[test]
+  fn user_name_setter_should_change_user_instance() {
+    assert_eq!("testuser", User::new().set_user_name("testuser").user_name());
+  }
+
+  #[test]
+  fn new_user_instance_should_have_empty_encrypted_password() {
+    let user = User::new();
+
+    assert_eq!("", user.encrypted_password());
+  }
+
+  #[test]
+  fn encrypted_password_setter_should_change_user_instance() {
+    assert_eq!("test_password", User::new().set_encrypted_password("test_password").encrypted_password());
   }
 }
