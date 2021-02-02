@@ -1,5 +1,6 @@
 use super::named::Named;
 
+#[allow(dead_code)]
 pub struct Product {
   name: String,
   description: String,
@@ -8,8 +9,8 @@ pub struct Product {
 }
 
 impl Named for Product {
-  fn name(&self) -> &str {
-    &self.name
+  fn name(&self) -> String {
+    String::from(&self.name)
   }
 
   fn set_name(&mut self, value: &str) -> &Product {
@@ -17,8 +18,8 @@ impl Named for Product {
     self
   }
 
-  fn description(&self) -> &str {
-    &self.description
+  fn description(&self) -> String {
+    String::from(&self.description)
   }
 
   fn set_description(&mut self, value: &str) -> &Product {
@@ -26,7 +27,7 @@ impl Named for Product {
     self
   }
 }
-
+#[allow(dead_code)]
 impl Product {
   pub fn new() -> Product {
     Product {
