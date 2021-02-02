@@ -30,10 +30,10 @@ impl Named for Product {
 impl Product {
   pub fn new() -> Product {
     Product {
-      name: String::from(""),
-      description: String::from(""),
-      v_code: String::from(""),
-      bar_code: String::from(""),
+      name: String::new(),
+      description: String::new(),
+      v_code: String::new(),
+      bar_code: String::new(),
     }
   }
 
