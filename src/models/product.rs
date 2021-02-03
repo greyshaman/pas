@@ -1,4 +1,5 @@
-use super::named::{Named, InnerName};
+use super::Named;
+use super::inner_names::InnerName;
 
 #[allow(dead_code)]
 pub struct Product {
@@ -26,6 +27,7 @@ impl Named for Product {
     self
   }
 }
+
 #[allow(dead_code)]
 impl Product {
   pub fn new() -> Product {
