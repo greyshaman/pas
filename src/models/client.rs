@@ -1,7 +1,8 @@
-use super::human_named::{HumanNamed, HumanName};
+use super::HumanNamed;
+use super::human_names::HumanNames;
 
 pub struct Client {
-  human_name: HumanName,
+  human_name: HumanNames,
 }
 
 impl HumanNamed for Client {
@@ -36,7 +37,7 @@ impl HumanNamed for Client {
 impl Client {
   pub fn new() -> Client {
     Client {
-      human_name: HumanName::new(),
+      human_name: HumanNames::new(),
     }
   }
 }

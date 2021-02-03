@@ -1,7 +1,9 @@
-use super::human_named::{HumanNamed, HumanName};
+use super::HumanNamed;
+use super::human_names::HumanNames;
+
 #[allow(dead_code)]
 pub struct User {
-  human_name: HumanName,
+  human_name: HumanNames,
   user_name: String,
   encrypted_password: String,
 }
@@ -39,7 +41,7 @@ impl HumanNamed for User {
 impl User {
   pub fn new() -> User {
     User {
-      human_name: HumanName::new(),
+      human_name: HumanNames::new(),
       user_name: String::new(),
       encrypted_password: String::new(),
     }
