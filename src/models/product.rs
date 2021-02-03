@@ -1,29 +1,28 @@
-use super::named::Named;
+use super::named::{Named, InnerName};
 
 #[allow(dead_code)]
 pub struct Product {
-  name: String,
-  description: String,
+  inner_names: InnerName,
   v_code: String,
   bar_code: String,
 }
 
 impl Named for Product {
   fn name(&self) -> String {
-    String::from(&self.name)
+    self.inner_names.name()
   }
 
   fn set_name(&mut self, value: &str) -> &Product {
-    self.name = String::from(value);
+    self.inner_names.set_name(value);
     self
   }
 
   fn description(&self) -> String {
-    String::from(&self.description)
+    self.inner_names.description()
   }
 
   fn set_description(&mut self, value: &str) -> &Product {
-    self.description = String::from(value);
+    self.inner_names.set_description(value);
     self
   }
 }
@@ -31,8 +30,7 @@ impl Named for Product {
 impl Product {
   pub fn new() -> Product {
     Product {
-      name: String::new(),
-      description: String::new(),
+      inner_names: InnerName::new(),
       v_code: String::new(),
       bar_code: String::new(),
     }
