@@ -27,6 +27,11 @@ impl<T> VersionedContainer<T> {
     }
   }
 
+  fn last_diff(&self) -> Option<Diff<T>> {
+    let boxed_diff = self.changes.iter().last();
+    *boxed_diff
+  }
+
   // returns last versioned value wrapped in Option
   pub fn value(&self) -> Option<T> {
     match self.changes.iter().last() {
@@ -44,6 +49,11 @@ impl<T> VersionedContainer<T> {
       Some(diff) => diff.time,
       None => SystemTime::UNIX_EPOCH,
     }
+  }
+
+  pub fn modify(&mut self, new_content: T) -> &Self {
+    self.changes.push(Diff { content: new_content, version:  })
+    self
   }
 } 
 
