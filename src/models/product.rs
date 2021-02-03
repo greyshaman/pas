@@ -1,5 +1,4 @@
-use super::Named;
-use super::inner_names::InnerName;
+use super::inner_names::{Named, InnerName};
 
 #[allow(dead_code)]
 pub struct Product {

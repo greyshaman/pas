@@ -1,5 +1,4 @@
-use super::HumanNamed;
-use super::human_names::HumanNames;
+use super::human_names::{HumanNamed, HumanNames};
 
 #[allow(dead_code)]
 pub struct User {
