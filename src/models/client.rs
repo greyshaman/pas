@@ -34,7 +34,7 @@ impl HumanNamed for Client {
 }
 
 impl Client {
-  pub fn new() -> Client {
+  pub fn new() -> Self {
     Client {
       human_name: HumanNames::new(),
     }

@@ -55,7 +55,7 @@ pub(super) struct HumanNames {
 }
 
 impl HumanNames {
-  pub(super) fn new() -> HumanNames {
+  pub(super) fn new() -> Self {
     HumanNames {
       first_name: String::new(),
       middle_name: String::new(),

@@ -38,7 +38,7 @@ impl HumanNamed for User {
 
 #[allow(dead_code)]
 impl User {
-  pub fn new() -> User {
+  pub fn new() -> Self {
     User {
       human_name: HumanNames::new(),
       user_name: String::new(),

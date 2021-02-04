@@ -29,7 +29,7 @@ impl Named for Product {
 
 #[allow(dead_code)]
 impl Product {
-  pub fn new() -> Product {
+  pub fn new() -> Self {
     Product {
       inner_names: InnerName::new(),
       v_code: String::new(),

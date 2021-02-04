@@ -11,7 +11,7 @@ pub(super) struct InnerName {
 }
 
 impl InnerName {
-  pub(super) fn new() -> InnerName {
+  pub(super) fn new() -> Self {
     InnerName {
       name: String::new(),
       description: String::new(),
